@@ -1,0 +1,7 @@
+- Which is a limitation of direct attached storage?: DAS can be shared only through the server to which it is connected.
+
+- An organization is building a data center. Which IT systems and components should the data center house? (Select all the options that are applicable)
+Application Servers
+Storage Systems
+Networking Switches
+ 
