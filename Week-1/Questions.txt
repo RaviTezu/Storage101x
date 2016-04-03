@@ -14,3 +14,10 @@ Networking Switches
 - Which is a benefit of VLAN?  Improves network security
 
 - By connecting to which component does a virtual switch enable a virtual machine to communicate over an external network? Physical NIC
+
+- Which is a benefit of storage virtualization? Enables storage management through a single interface.
+
+- A storage pool is created from two storage systems. The following are the capacity details for each storage system: 
+Storage System 1: Total capacity = 2 TB and Used capacity = 1.3 TB
+Storage System 2: Total capacity = 3 TB and Used capacity = 1.9 TB
+Based on the above information, what is the available capacity in the storage pool? 1.8 TB
