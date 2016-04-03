@@ -1,0 +1,59 @@
+Course Outline and Objectives
+
+Week 1: Data Storage Fundamentals
+
+Upon completion of Week 1 you should be able to:
+
+Provide an overview of a data center and identify its key components
+Distinguish between direct attached storage and networked storage
+Describe server virtualization, network virtualization, and storage virtualization
+Summarize the architecture and working of magnetic disk drives and solid state drives
+Describe the factors to consider for storage investment
+Section 1: Enterprise IT Environment – Enterprise IT infrastructure components, direct attached storage, networked storage, and data center
+
+Section 2: Introduction to Virtualization – Virtualization overview, server virtualization, network virtualization, and storage virtualization
+Section 3: Data Storage Devices – Types of data storage devices, magnetic disk drive, solid state drive, and storage interfaces and protocols
+Section 4: Considerations for Storage Investment
+
+Week 2: Enterprise Storage Solutions
+
+Upon completion of Week 2 you should be able to:
+
+Provide an overview of the architecture of a storage system
+Describe RAID techniques and RAID levels
+Summarize the architecture and working of block, file, object, and unified storage systems
+Distinguish between SAN and NAS architectures and protocols
+Section 1: Storage Systems Components and Architecture
+Section 2: Introduction to RAID – RAID overview and RAID levels
+Section 3: Types of Storage Systems – Block, file, object, and unified storage systems
+Section 4: Storage Area Network – Fibre Channel SAN, IP SAN, and FCoE SAN
+Section 5: Network Attached Storage (NAS)
+
+Week 3: Business Continuity and Storage Security
+
+Upon completion of Week 3 you should be able to:
+
+Define business continuity and describe its importance in an enterprise environment
+Distinguish between local and remote replication technologies
+Describe the types of data backup, backup architecture, and backup methods
+Describe the importance of information security in enterprises
+Summarize various storage infrastructure security mechanisms
+Section 1: Business Continuity
+Section 2: Data Replication – Local replication and remote replication
+Section 3: Data Backup – Backup types, backup architecture, and backup methods
+Section 4: Storage Infrastructure Security – Importance of storage security and security mechanisms
+
+Week 4: Storage Infrastructure Management, Storage Industry Trends, and Cloud Computing 
+
+Upon completion of Week 4 you should be able to:
+
+Summarize the various storage infrastructure management processes
+Define cloud computing and explain its characteristics
+Explain cloud service models and cloud deployment models
+Provide an overview of cloud storage
+Describe the technology trends in the storage industry
+Section 1: Storage Infrastructure Management – Storage infrastructure management processes
+Section 2: Introduction to Cloud Computing – Cloud computing definition, cloud characteristics, cloud Benefits, and service level agreement (SLA)
+Section 3: Cloud Service Models and Deployment Models – Infrastructure as a Service (IaaS), Platform as a Service (PaaS), Software as a Service (SaaS), public cloud, private cloud, community cloud, and hybrid cloud
+Section 4: Cloud Storage
+Section 5: Storage Industry Trends – All flash storage, converged infrastructure, software-defined data center, and the Third Platform

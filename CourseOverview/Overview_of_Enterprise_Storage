@@ -1,0 +1,13 @@
+We live in a world driven by information technology (IT). IT plays a critical role in enterprises. Customer-facing enterprise applications provide services to consumers and generate revenue for enterprises. Business applications enable enterprises to carry out essential business operations. Enterprise applications are generating and processing unprecedented volumes of data with growing businesses and consumer bases.
+
+So where do enterprises store all their data? An enterprise application runs on a server, but in most enterprises the application data isn’t stored on the server’s internal drive. The data is stored on an enterprise storage system, also called as a storage array. An enterprise storage system is a huge box filled with lots of storage drives that may be disk drives or flash drives, or a combination of the two. A server connects to this storage system and stores application data on it.
+
+But why do enterprises need these huge storage boxes? Well, as I said, enterprises have huge storage capacity requirements. An enterprise storage array provides very high capacity that meets these requirements. Also, multiple servers can connect to the same storage system, allowing applications to store data on that storage system. This centralizes storage and simplifies management.
+
+However, simply storing data on storage systems isn’t enough for enterprises. Things like data loss, unavailability of data, accidental data deletion, and data leakage can have a serious impact on enterprises. Therefore, data needs to be protected against deletion, system failures, disasters, and unauthorized access. Also, if you’re storing data outside a server, then the application requires a fast, low-latency connection to the storage system. Otherwise, the application’s performance is impacted.
+
+Modern storage systems provide reliable and efficient storage with lots of features and functionalities that meet the capacity, availability, performance, and security requirements of an enterprise.
+
+Are you curious to know more about what enterprise storage systems are and how they work? Are you interested in knowing how enterprises store, manage, and protect their data? Do you wonder what cloud computing is, and what it means to enterprise storage? Do you know what are the modern technology trends that are bringing in changes to enterprise storage?
+
+Storage101x provides you an introduction to enterprise storage technologies. It aims to help you set out on a learning path to gain the required skills and knowledge for a rewarding career in enterprise storage. 
