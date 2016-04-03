@@ -10,3 +10,7 @@ Networking Switches
 - Which is a benefit of server virtualization? It improves the utilization of a server’s hardware resources.
 
 - True or false. A bare metal hypervisor is installed as an application on a server’s operating system? False
+
+- Which is a benefit of VLAN?  Improves network security
+
+- By connecting to which component does a virtual switch enable a virtual machine to communicate over an external network? Physical NIC
