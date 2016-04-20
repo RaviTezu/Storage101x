@@ -1,4 +1,4 @@
-Storage Systems: Components and Arch. 
+Storage Systems: Components and Arch:
 
 1. Which component of a storage system manages storage pooling and provisioning? - Storage OS
 
@@ -11,3 +11,6 @@ Storage systems comes with some batteries which are used by cache in case of pow
 4. Which component provides the primary interface to connect to a storage system? Front-end ports
 
 5. Which is a benefit of write-back caching? It improves the storage system's write pergformance. 
+
+
+Introduction to RAID:
