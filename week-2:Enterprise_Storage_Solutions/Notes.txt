@@ -20,3 +20,12 @@ Introduction to RAID:
 2. Which RAID level uses block-level striping with a dedicated parity drive? RAID4
 
 3. Which RAID level uses dual distributed parities? RAID6
+
+
+Types of Storage Systems:
+
+1. Which type of storage system provides storage to a host in the form of a LUN?Block storage system
+
+2. Which type of storage system uses a flat non-hierarchical file system to store data? Object storage system
+
+3. Which is a characteristic of scale-up storage? Storage capacity is increased by adding drives within storage cabinet.
