@@ -3,3 +3,42 @@ Business Continuity:
 1. Which is an example of an unscheduled event that leads to downtime in a storage infrastructure?  Hardware failure
 
 2. What is an accurate statement about recovery point objective(RPO) in business continuity? It indicates when data was last backed up.
+
+Data Replication:
+-----------------
+Snapshot Technology Overview:
+
+Several data storage vendors implement snapshot copies for backup and replication. A snapshot copy is a point-in-time file system image.
+For this discussion, we consider a storage operating system that uses pointers to the actual data blocks on disk, but does not rewrite existing blocks.
+Rather it writes updated data to a new block and changes the pointer.
+
+A snapshot simply manipulates block pointers, creating a “frozen” read-only view of a storage volume that lets applications access older versions of files, directory hierarchies, and/or
+LUNs (logical unit numbers) without special programming. Because actual data blocks are not copied, snapshots are extremely efficient both in the time needed to create them and in storage space.
+
+A snapshot takes a few seconds to create, regardless of the size of the volume or the level of activity on the storage system.
+After a snapshot has been created, changes to data objects are reflected in updates to the current version of the objects, as if snapshot copies did not exist.
+Meanwhile, the snapshot copy of the data remains completely stable. A snapshot copy incurs no performance overhead;
+users can comfortably store a number of snapshot copies per storage volume, all of which are accessible as read-only and online versions of the data.
+Snapshot technology forms the basis of high-availability, disaster-tolerant, and data protection solutions.
+
+The figure below depicts how snapshots work.(See Fig.)
+A file has blocks A, B, and C, and its snapshot is taken in Figure 1. In Figure 2, block B is changes by a user to B1.
+The changed data (B1) is written to a new block and the file pointer is updated. However, the snapshot pointer still points to the old block, giving a live view of the data and an historical view.
+In Figure 3, another snapshot is taken that reflects the live view of data. Now a user has access to three generations of data – the live one, Snapshot 2, and Snapshot 1, in order of age.
+This is without taking up the disk space that the three unique copies would require.
+
+System administrators use snapshot copies to take and maintain frequent, low-impact, user-recoverable copies of files, directory hierarchies, LUNs, and/or application data.
+Snapshots incur minimal performance overhead and can be safely created on a running system. Snapshots allow near-instantaneous, secure, user-managed restores.
+Users can directly access snapshot copies to recover from accidental deletion, corruption, or modification of their data.
+Since the security of the file is retained in the snapshot copy, the restoration is both secure and simple.
+
+1. True or false. Replicating data from a primary storage system to a secondary storage system within the same data center is an example of local replication. True
+
+2. What is a benefit of asynchronous remote replication? It reduces write latency and improves application performance.
+
+3. An organization has a primary data center and a remote disaster recovery site to which data is replicated asynchronously.
+What is the correct sequence of steps in the remote replication process when a host writes data to a storage system at the primary site?
+a. Data is written to a storage system at the primary site.
+b. An ACK is issued to the host.
+c. Data is replicated on a storage system at the remote site.
+d. An ACK is issues to the storage system at the primary site. 
