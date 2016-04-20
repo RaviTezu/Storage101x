@@ -1,0 +1,5 @@
+Storage Systems: Components and Arch. 
+
+1. Which component of a storage system manages storage pooling and provisioning? - Storage OS
+
+2. Which component of a storage system contains storage drives? - Drive Enclosures
