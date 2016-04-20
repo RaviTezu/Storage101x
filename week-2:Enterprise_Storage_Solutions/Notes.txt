@@ -1,20 +1,18 @@
 Storage Systems: Components and Arch:
-
 1. Which component of a storage system manages storage pooling and provisioning? - Storage OS
 
 2. Which component of a storage system contains storage drives? - Drive Enclosures
 
-Storage systems comes with some batteries which are used by cache in case of power failure. 
+* Storage systems comes with some batteries which are used by cache in case of power failure.
 
 3. Which component is in the front end of a storage system? Cache
 
 4. Which component provides the primary interface to connect to a storage system? Front-end ports
 
-5. Which is a benefit of write-back caching? It improves the storage system's write pergformance. 
+5. Which is a benefit of write-back caching? It improves the storage system's write pergformance.
 
 
 Introduction to RAID:
-
 1. Which RAID level provides performance benefits but no data protection? RAID0
 
 2. Which RAID level uses block-level striping with a dedicated parity drive? RAID4
@@ -23,9 +21,50 @@ Introduction to RAID:
 
 
 Types of Storage Systems:
-
 1. Which type of storage system provides storage to a host in the form of a LUN?Block storage system
 
 2. Which type of storage system uses a flat non-hierarchical file system to store data? Object storage system
 
 3. Which is a characteristic of scale-up storage? Storage capacity is increased by adding drives within storage cabinet.
+
+Fibre Channel Protocol:
+Fibre Channel (FC) is a high-speed data transmission technology that is primarily used to connect hosts to block storage systems over a storage area network (SAN).
+The T11 Technical Committee of the InterNational Committee for Information Technology Standards (INCITS) specifies the FC standard.
+INCITS is a Standards Development Organization accredited to the American National Standards Institute (ANSI).
+
+FC is a full-duplex, serial communication technology that operates over both optical fiber and copper cables, with support for distances up to 10 km.
+Common FC transmission rates are 2 Gb/s, 4 Gb/s, and 8 Gb/s, with the latest variant (16GFC) supporting a transmission rate of up to 16 Gb/s.
+A Fibre Channel SAN uses the Fibre Channel Protocol (FCP) for host-storage connectivity. FCP has five layers – FC-0, FC-1, FC-2, FC-3, and FC-4.
+
+The FC-0 layer defines the physical interface of the FC connection. It defines the characteristics of the physical interface and transmission media.
+The FC-1 layer defines the transmission protocol including data encoding and decoding rules, and error control.
+The FC-2 layer defines the rules for signaling and data transfer. It defines the framing and flow control rules, and also defines various classes of services.
+The FC-3 layer is not implemented and is intended to provide services for enabling advanced features.
+The FC-4 layer defines the application interfaces that can execute over Fibre Channel.
+It specifies the mapping rules of upper layer protocols, such as SCSI, IP, High Performance Parallel Interface (HIPPI) Framing Protocol, and
+Intelligent Peripheral Interface (IPI) that use the lower FC layers.
+
+FC Data Format:
+The basic data units transmitted over an FC connection are called “frames”. An FC frame contains the information to be transmitted (payload).
+Typically, it is SCSI data from the host that is encapsulated in the FC frame.
+The frame also has additional information in its header that is required for routing the frame from a source N-Port to the destination N_Port over the FC SAN fabric.
+The FC-2 layer is responsible for splitting data into frames at the source and reassembling frames at the destination.
+
+A set of one or more contiguous FC frames transmitted from one N_Port to another is called a “sequence”.
+Each frame in a sequence is identified by a unique number called the Sequence Count, which is part of the frame header. A set of one or more sequences in an FC SAN is called an “exchange”.
+
+FC Addressing:
+Each device, such as an FC HBA and an FC switch in an FC SAN is uniquely identified by a 64-bit World Wide Name (WWN).
+A WWN may be used as a World Wide Node Name (WWNN) to identify an FC HBA or an FC switch. A WWN may also be used as a World Wide Port Name (WWPN) to identify a port on an FC HBA or an FC switch.
+For example, a switch would have a WWNN, and each port would have a WWPN. A WWN is a static identifier for each FC device, and is burned into the device.
+It includes the vendor ID of the manufacturer and the company ID of the organization that purchased the device.
+
+In addition to WWN, a port addressing scheme is also used in an FC SAN for routing. Each FC switch port in a fabric is identified by a unique 24-bit address that is assigned dynamically.
+The address includes a Domain ID, an Area ID, and a Port ID, each of 8 bits in length.
+
+The Domain ID is the address that uniquely identifies an FC switch in the fabric. There can be 256 possible addresses. However, some addresses are reserved and only 239 addresses are available.
+Therefore, it is theoretically possible to have up to 239 switches in an FC SAN.
+
+The Area ID is the address that identifies a group of switch ports. Therefore, multiple switch ports share an Area ID. This field provides up to 256 addresses.
+
+The Port ID uniquely identifies a switch port within a group (Area). This field also provides up to 256 addresses.
