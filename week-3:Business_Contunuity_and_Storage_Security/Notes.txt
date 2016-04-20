@@ -1,2 +1,5 @@
 Business Continuity:
 --------------------
+1. Which is an example of an unscheduled event that leads to downtime in a storage infrastructure?  Hardware failure
+
+2. What is an accurate statement about recovery point objective(RPO) in business continuity? It indicates when data was last backed up.
