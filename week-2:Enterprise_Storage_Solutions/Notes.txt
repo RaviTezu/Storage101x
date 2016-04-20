@@ -1,4 +1,5 @@
 Storage Systems: Components and Arch:
+-------------------------------------
 1. Which component of a storage system manages storage pooling and provisioning? - Storage OS
 
 2. Which component of a storage system contains storage drives? - Drive Enclosures
@@ -13,6 +14,7 @@ Storage Systems: Components and Arch:
 
 
 Introduction to RAID:
+---------------------
 1. Which RAID level provides performance benefits but no data protection? RAID0
 
 2. Which RAID level uses block-level striping with a dedicated parity drive? RAID4
@@ -21,6 +23,7 @@ Introduction to RAID:
 
 
 Types of Storage Systems:
+-------------------------
 1. Which type of storage system provides storage to a host in the form of a LUN?Block storage system
 
 2. Which type of storage system uses a flat non-hierarchical file system to store data? Object storage system
@@ -28,6 +31,7 @@ Types of Storage Systems:
 3. Which is a characteristic of scale-up storage? Storage capacity is increased by adding drives within storage cabinet.
 
 Fibre Channel Protocol:
+-----------------------
 Fibre Channel (FC) is a high-speed data transmission technology that is primarily used to connect hosts to block storage systems over a storage area network (SAN).
 The T11 Technical Committee of the InterNational Committee for Information Technology Standards (INCITS) specifies the FC standard.
 INCITS is a Standards Development Organization accredited to the American National Standards Institute (ANSI).
@@ -45,6 +49,7 @@ It specifies the mapping rules of upper layer protocols, such as SCSI, IP, High 
 Intelligent Peripheral Interface (IPI) that use the lower FC layers.
 
 FC Data Format:
+---------------
 The basic data units transmitted over an FC connection are called “frames”. An FC frame contains the information to be transmitted (payload).
 Typically, it is SCSI data from the host that is encapsulated in the FC frame.
 The frame also has additional information in its header that is required for routing the frame from a source N-Port to the destination N_Port over the FC SAN fabric.
@@ -54,6 +59,7 @@ A set of one or more contiguous FC frames transmitted from one N_Port to another
 Each frame in a sequence is identified by a unique number called the Sequence Count, which is part of the frame header. A set of one or more sequences in an FC SAN is called an “exchange”.
 
 FC Addressing:
+-------------
 Each device, such as an FC HBA and an FC switch in an FC SAN is uniquely identified by a 64-bit World Wide Name (WWN).
 A WWN may be used as a World Wide Node Name (WWNN) to identify an FC HBA or an FC switch. A WWN may also be used as a World Wide Port Name (WWPN) to identify a port on an FC HBA or an FC switch.
 For example, a switch would have a WWNN, and each port would have a WWPN. A WWN is a static identifier for each FC device, and is burned into the device.
@@ -64,7 +70,126 @@ The address includes a Domain ID, an Area ID, and a Port ID, each of 8 bits in l
 
 The Domain ID is the address that uniquely identifies an FC switch in the fabric. There can be 256 possible addresses. However, some addresses are reserved and only 239 addresses are available.
 Therefore, it is theoretically possible to have up to 239 switches in an FC SAN.
-
 The Area ID is the address that identifies a group of switch ports. Therefore, multiple switch ports share an Area ID. This field provides up to 256 addresses.
-
 The Port ID uniquely identifies a switch port within a group (Area). This field also provides up to 256 addresses.
+
+IP SAN Protocols:
+-----------------
+An IP SAN facilitates host connectivity to block storage systems over a local area network (LAN), a wide area network (WAN), or the Internet.
+There are several advantages for enterprises in using IP networks for hosts-storage connectivity. Most enterprises would have a Gigabit Ethernet infrastructure that can be used for SAN connectivity.
+This is a more cost-effective option than building an FC SAN, and the traditional skills of IP networking staff can be applied to IP SANs.
+IP networks provide security, scalability, and interoperability. iSCSI and FCIP are two IP SAN protocols.
+
+iSCSI Protocol:
+---------------
+The Internet Engineering Task Force (IETF) ratified the Internet Small Computer Systems Interface (iSCSI) protocol as a standard.
+The iSCSI protocol is a transport layer protocol used in IP SANs. This network may be dedicated for storage networking or an Ethernet infrastructure that is shared with other applications.
+iSCSI encapsulates SCSI data and commands to be transmitted over IP networks.
+
+There are two types of devices in the SCSI protocol – the SCSI initiators and the targets. The initiators are the devices that send requests for the execution of commands.
+Targets are the devices that execute the commands. The structure that is used to send a command from an initiator to a target is called as a Command Descriptor Block (CDB).
+The endpoint, within the target, on which the command is executed is called as a “logical unit”. A target is a collection of logical units that are directly addressable.
+
+The execution of a SCSI command results in an optional data phase and a status phase.
+In the data phase, data may either travel from the initiator to the target (data write operation) or it may travel from the target to the initiator (data read operation).
+In the status phase, the target returns the final status of the operation. This response terminates the SCSI command.
+
+In an iSCSI SAN environment, application hosts are the initiators, and storage systems are the targets. LUNs in the storage systems are the logical units.
+The SCSI driver on the host builds SCSI CDBs from the requests issued by an application, and forwards them to the iSCSI layer.
+The SCSI driver also receives CDBs from the iSCSI layer and forwards data to the application.
+
+iSCSI Protocol Stack(See Fig.):
+------------------------------
+When an application (host) wants to access a LUN, the following sequence of operations is performed at the initiator:
+
+1. The SCSI layer generates a CDB and forwards it to the iSCSI layer.
+2. The iSCSI layer encapsulates the CDB in an iSCSI protocol data unit (PDU) and forwards it to the TCP/IP layers.
+3. The TCP layer encapsulates the iSCSI PDU in a TCP packet and the IP layer then encapsulates this packet in an IP packet.
+4. The packet is forwarded to the link layer and is encapsulated in a physical layer frame and transmitted over the network.
+
+The reverse process takes place at the target. The SCSI CDB is extracted from the incoming packet and forwarded to the target LUN.
+
+iSCSI Addressing:
+-----------------
+The iSCSI protocol enables both naming and addressing of initiators and targets. Each device has a unique iSCSI name as well as a dynamic address.
+
+The iSCSI name is a logical name that is not linked to an IP address, and identifies an iSCSI device regardless of its physical location.
+The iSCSI name may be in the IQN format, the EUI format, or the NAA format.
+
+iSCSI qualified name (IQN) is a unique identifier that can be up to 255 characters long. It has the format: “iqn.yyyy-mm.naming-authority:unique-device-name”.
+
+The “yyyy-mm” field is the year and month when the “naming authority” acquired their domain name.
+
+The “naming-authority” field is usually in the reverse domain name format of the entity responsible for naming the device. An example reverse domain name is “com.netapp”.
+
+The “unique-name” field is any name you want to use to name an initiator or target. The naming authority must ensure that any names assigned following the colon are unique.
+An example of an IQN of a target is: iqn.1992-08.com.netapp:sn.12345678.
+
+Extended unique identifier (EUI) is unique identifier that follows the EUI-64 standard. A vendor or manufacturer uses the EUI-64 formatted worldwide unique names for their products.
+The EUI includes the “eui.” prefix followed by a name that is 64 bits long (16 hexadecimal characters). It has the format: eui.nnnnnnnnnnnnnnnn. For example, eui.0123456789abcdef.
+
+40 bits of the EUI are used for a unique ID for the device. The EUI also includes a 24-bit Organizationally Unique Identifier (OUI) that uniquely identifies a manufacturer or vendor globally.
+It is assigned by the IEEE Registration Authority.
+
+T11 Network Address Authority (NAA) is another naming convention used for iSCSI devices.
+It is defined by the InterNational Committee for Information Technology Standards (INCITS) for compatibility with the naming conventions used in Fibre Channel and Serial Attached SCSI (SAS) storage technologies.
+
+The NAA includes the “naa.” prefix followed by a name that is up to 128 bits long (32 hexadecimal characters). For example, naa.0123456789abcdef.
+The NAA also includes the OUI of the vendor or manufacturer.
+
+FCIP:
+----
+Fibre Channel over IP (FCIP) is technology for connecting Fibre Channel SANs. FCIP is a tunneling mechanism that allows FC information to be tunneled across an IP link.
+In FCIP, FC frames are encapsulated in IP packets and transported over an IP network.
+FCIP allows geographically distributed SAN islands to be transparently interconnected as shown in the figure below.
+When two SAN islands are connected using FCIP, the result is a merged FC fabric giving a single FC SAN environment. FCIP is typically used for remote backup and replication.
+
+Fibre Channel over Ethernet (FCoE):
+-----------------------------------
+Most enterprises deploy multiple networks in their data centers for separate purposes. The networks typically include Ethernet and FC SAN.
+Ethernet provides a cost-effective and efficient way to support use cases such as corporate LAN, VOIP, NAS storage, and iSCSI storage.
+An FC SAN provides hosts with block access to storage systems for high-performance and data-intensive applications.
+
+Ethernet and FC SANs each fill an essential role in the data center, but they are different in design and functionality.
+The two networks have their own security constraints and traffic patterns and utilize separate management toolsets.
+As a result, each network must be built and maintained on its own dedicated, isolated infrastructure, requiring separate cabling and network interfaces on each server.
+
+Managing two separate networks for data and storage adds complexity and costs to the data center.
+Enterprises therefore seek to converge their LAN and SAN networks to enable the data center to run more efficiently and cost-effectively, while preserving their investment in the FC infrastructure.
+
+Fibre Channel over Ethernet (FCoE) is a networking technology that enables transporting LAN and FC SAN traffic on a single, unified Ethernet cable.
+The converged FCoE network supports LAN and SAN data types, reducing equipment and cabling in the data center.
+It also lowers the power and cooling load associated with that equipment. There are also fewer support points when converging to a unified network, which helps reduce the management burden.
+
+FCoE is enabled by an enhanced 10 Gb Ethernet (10GbE) standard referred to as Data Center Bridging (DCB) or Converged Enhanced Ethernet (CEE).
+Tunneling protocols, such as FCIP, use IP to transmit FC traffic over long distances. However, FCoE is a Layer-2 encapsulation protocol that uses Ethernet physical transport to transmit FC data.
+
+The move to 10GbE is being fueled largely by server virtualization adoption, which demands the presence of high-performance Ethernet I/O connections.
+Sharing the same Ethernet network fabric—from server to switch to storage—removes the requirement of a dedicated storage area network.
+This helps in reducing the total cost of ownership (TCO) by preserving existing infrastructure investments and maintaining backward compatibility with familiar IT procedures and processes.
+
+FCoE SAN Components:(See Fig.)
+--------------------
+The main components in an FCoE SAN are:
+
+Converged network adapters (CNAs):
+CNAs combine the functionality of Ethernet network interface cards (NICs) and Fibre Channel host bus adapters (HBAs) in an FCoE environment.
+This enables reducing the number of server adapters that enterprises require, reduces port count, and eliminates cabling issues.
+
+FCoE cables:
+There are two options for FCoE cables – optical fiber cables and twinax copper cables.
+FCoE twinax cables require less power and are less expensive. However, their distance is limited to less than 10 meters.
+
+FCoE switches:
+FCoE switches are required for connecting servers to storage arrays using FCoE.
+Therefore, enterprises must deploy FCoE switches that support FCoE/Data Center Bridging and connect servers to corporate LANs, SANs, or FCoE storage systems.
+
+FCoE storage systems:
+These are storage systems that support FCoE and converged traffic natively. There are also storage systems that support Fibre Channel to an FCoE switch and FCoE from the switch to the host servers.
+
+FCoE Protocol:(See Fig.)
+--------------
+The T11 Technical Committee of the InterNational Committee for Information Technology Standards (INCITS) specifies the FCoE standard. The figure below depicts the FCoE protocol stack.
+
+FCoE encapsulates FC frames in Ethernet frames and transmits them over an FCoE network made of FCoE switches.
+This allows enterprises to use a Gigabit Ethernet network for host-storage connectivity in addition to using the network for Ethernet applications.
