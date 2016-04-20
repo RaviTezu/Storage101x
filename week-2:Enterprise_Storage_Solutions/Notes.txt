@@ -6,4 +6,8 @@ Storage Systems: Components and Arch.
 
 Storage systems comes with some batteries which are used by cache in case of power failure. 
 
+3. Which component is in the front end of a storage system? Cache
 
+4. Which component provides the primary interface to connect to a storage system? Front-end ports
+
+5. Which is a benefit of write-back caching? It improves the storage system's write pergformance. 
