@@ -3,3 +3,7 @@ Storage Systems: Components and Arch.
 1. Which component of a storage system manages storage pooling and provisioning? - Storage OS
 
 2. Which component of a storage system contains storage drives? - Drive Enclosures
+
+Storage systems comes with some batteries which are used by cache in case of power failure. 
+
+
