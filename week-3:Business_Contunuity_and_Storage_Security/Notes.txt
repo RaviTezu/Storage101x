@@ -41,4 +41,7 @@ What is the correct sequence of steps in the remote replication process when a h
 a. Data is written to a storage system at the primary site.
 b. An ACK is issued to the host.
 c. Data is replicated on a storage system at the remote site.
-d. An ACK is issues to the storage system at the primary site. 
+d. An ACK is issues to the storage system at the primary site.
+
+Data Backup:
+------------
