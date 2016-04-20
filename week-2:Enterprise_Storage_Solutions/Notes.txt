@@ -14,3 +14,9 @@ Storage systems comes with some batteries which are used by cache in case of pow
 
 
 Introduction to RAID:
+
+1. Which RAID level provides performance benefits but no data protection? RAID0
+
+2. Which RAID level uses block-level striping with a dedicated parity drive? RAID4
+
+3. Which RAID level uses dual distributed parities? RAID6
