@@ -193,3 +193,13 @@ The T11 Technical Committee of the InterNational Committee for Information Techn
 
 FCoE encapsulates FC frames in Ethernet frames and transmits them over an FCoE network made of FCoE switches.
 This allows enterprises to use a Gigabit Ethernet network for host-storage connectivity in addition to using the network for Ethernet applications.
+
+1. How does the Fibre Channel (FC) protocol transmit data?  It wraps SCSI data into FC frames and transmits them over an FC network.
+
+2. Which FC port type connects to an F_Port in an FC SAN environment? N_Port
+
+3. Which of the following is an initiator in an iSCSI SAN? A host
+
+4. Which is a benefit of FCIP?  It enables two geographically dispersed SANs to connect to each other a WAN.
+
+5. Which component in an FCoE SAN has the ability to transmit and receive both Ethernet and FC data? Converged Network Adapter Converged Network Adapter.
