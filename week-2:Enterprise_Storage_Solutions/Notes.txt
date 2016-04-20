@@ -203,3 +203,10 @@ This allows enterprises to use a Gigabit Ethernet network for host-storage conne
 4. Which is a benefit of FCIP?  It enables two geographically dispersed SANs to connect to each other a WAN.
 
 5. Which component in an FCoE SAN has the ability to transmit and receive both Ethernet and FC data? Converged Network Adapter Converged Network Adapter.
+
+Network Attached Storage(NAS):
+------------------------------
+1. An enterprise is using NAS for file sharing. Multiple clients connect to a NAS device over a LAN.
+Where does the file system that manages the file sharing environment reside in this environment? On the NAS head
+
+2. Which protocol enables Windows clients to connect to a NAS device?  Common Internet File System Common Internet File System
