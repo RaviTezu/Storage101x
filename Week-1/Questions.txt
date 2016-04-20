@@ -37,3 +37,7 @@ Based on the above information, what is the available capacity in the storage po
 - Which task frees up blocks for writes in an SSD? - Garbage Collection.
 
 - What is a reason for overprovisioning capacity in an SSD? -  It provides space for housekeeping tasks, like Garbage Collection. 
+
+- Which factors measure the performance of a storage system? Throughput, Response time, Capacity and Reliability.
+
+- What enables high availability in a storage infrastructure? Redundant Components.
