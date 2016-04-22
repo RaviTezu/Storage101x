@@ -29,3 +29,13 @@ Cloud Service Models and Deployment Models:
 3. Which cloud deployment model should an enterprise use if it requires complete control over all computing resources, applications, and data?  On-premise private cloud
 
 4. What is a benefit of the hybrid cloud model?  It enables the balancing of application workloads across multiple clouds types.
+
+Cloud Storage:
+--------------
+1. Which is a common use case for a consumer to use a public cloud provider’s Storage as a Service? Off-premise data backup.
+
+2. What feature does Storage as a Service provide to consumers? Storage space can be flexibly increased or decreased as per consumer requirements. 
+
+Technology Trends in the Storage Industry:
+------------------------------------------
+1.
