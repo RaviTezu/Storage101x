@@ -19,3 +19,9 @@ Introduction to Cloud Computing:
 4. What do consumers use to view, request, and provision cloud services?  Self-service portal
 
 5. Which document specifies the availability, performance, and security parameters of a cloud service? Service level agreement
+
+Cloud Service Models and Deployment Models:
+-------------------------------------------
+1. See Fig. - Cloud_service_models.png
+
+2. True or false. In Software as a Service, the cloud provider manages and controls the entire underlying cloud infrastructure. True. 
