@@ -24,4 +24,8 @@ Cloud Service Models and Deployment Models:
 -------------------------------------------
 1. See Fig. - Cloud_service_models.png
 
-2. True or false. In Software as a Service, the cloud provider manages and controls the entire underlying cloud infrastructure. True. 
+2. True or false. In Software as a Service, the cloud provider manages and controls the entire underlying cloud infrastructure. True.
+
+3. Which cloud deployment model should an enterprise use if it requires complete control over all computing resources, applications, and data?  On-premise private cloud
+
+4. What is a benefit of the hybrid cloud model?  It enables the balancing of application workloads across multiple clouds types.
