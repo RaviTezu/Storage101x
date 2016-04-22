@@ -45,3 +45,9 @@ d. An ACK is issues to the storage system at the primary site.
 
 Data Backup:
 ------------
+Backup types: 1. Full data backup 2. Cumulative Incremental backup 3. Differential Incremental backup 4. Incremental forever backup.
+
+1. What is a benefit of taking daily full backups of data over other backup types?  Restoration of data is faster
+
+2. An organization uses cumulative incremental backup in their storage environment. A full data backup is taken every Sunday night.
+Which data backups are required to restore data in the event of data loss on a Friday?  Sunday’s full backup, and only the cumulative backup of Thursday.
