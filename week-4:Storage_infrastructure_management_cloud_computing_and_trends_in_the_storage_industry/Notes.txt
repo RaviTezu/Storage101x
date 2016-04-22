@@ -1,0 +1,21 @@
+Introduction to Storage Infrastructure Management:
+--------------------------------------------------
+
+1. Which storage infrastructure management process involves ensuring that adequate IT resources are available to applications? Capacity management
+
+2. Which storage optimization technique enables an organization to reduce storage capacity utilization? Deduplication
+
+3. How does multipathing improve performance in a storage infrastructure?  It balances workloads across two HBAs on a host.
+
+
+Introduction to Cloud Computing:
+--------------------------------
+1. Which cloud computing characteristic enables a consumer to unilaterally provision computing resources without interaction with the cloud provider? On-demand self-service
+
+2. Which cloud computing characteristic enables a consumer to access and use a cloud service on various client device types? Broad network access
+
+3. What does the measured service characteristic of cloud computing signify? A consumer is charged for a cloud service based on resource use?
+
+4. What do consumers use to view, request, and provision cloud services?  Self-service portal
+
+5. Which document specifies the availability, performance, and security parameters of a cloud service? Service level agreement
